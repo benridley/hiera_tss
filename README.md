@@ -4,7 +4,7 @@
 
 ### Description
 
-This is a hiera backend that allows you to query Thycotic Secret Server over its rest API. It exposes the key 'secret_server::#{secret_id}' to your Hiera instance. 
+This is a hiera backend that allows you to query Thycotic Secret Server over its rest API. It exposes the key 'secret_server::#{secret_id}' to your Hiera instance, and returns a hash wrapped in Puppet's sensitive type. 
 
 ### Compatibility
 
@@ -14,16 +14,12 @@ This is a hiera backend that allows you to query Thycotic Secret Server over its
 
 Only dependencies are the net/http and json gems for Ruby which ship with Puppet.
 
-
 ### Configuration
-
-See [The official Puppet documentation](https://docs.puppet.com/puppet/4.9/hiera_intro.html) for more details on configuring Hiera 5.
 
 The following is an example Hiera 5 hiera.yaml configuration for use with hiera_tss
 
 ```yaml
 ---
-
 version: 5
 
 hierarchy:
@@ -43,19 +39,7 @@ The following mandatory Hiera 5 options must be set for each level of the hierar
 `lookup_key`: This option must be set to `hiera_tss`
 `uri`: a single URI.
 
-
-The following are optional configuration parameters supported in the `options` hash of the Hiera 5 config
-
-#### Lookup options
-
-TODO: `http_connect_timeout: ` : Timeout in seconds for the HTTP connect (default 10)
-
-TODO: `http_read_timeout: ` : Timeout in seconds for waiting for a HTTP response (default 10)
-
-
-`failure: ` : When set to `graceful` will stop hiera-http from throwing an exception in the event of a connection error, timeout or invalid HTTP response and move on.  Without this option set hiera-http will throw an exception in such circumstances
-
-#### HTTP options
+#### SSL options
 
 `use_ssl:`: When set to true, enable SSL (default: false)
 

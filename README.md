@@ -49,7 +49,7 @@ The following mandatory Hiera 5 options must be set for each level of the hierar
 
 `ssl_verify`: Specify whether to verify SSL certificates (default: true)
 
-`auth_file` : The path of a file on your Puppet Master that contains authentication information for Secret Server. It should follow the format:
+`auth_file` : The path of a file on your Puppet Master that contains authentication information for Secret Server. Set this to read only for the Puppet master user. It should follow the format:
 
   ```
   username=secret_server_username

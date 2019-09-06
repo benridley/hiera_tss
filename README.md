@@ -52,19 +52,20 @@ The following mandatory Hiera 5 options must be set for each level of the hierar
 `auth_file` : The path of a file on your Puppet Master that contains authentication information for Secret Server. It should follow the format:
 
   ```
-  username=secret_server
+  username=secret_server_username
   password=secret_password
-  domain=secret_domain (optional)
+  domain=secret_domain (optional, for when you're doing AD integration)
   ```
 
 ### How to use the hiera_tss
 
 Lookup a key using secret_server::#{secret_id}. If found, the returned value will be a hash that follows the format:
+```
 {
   "Username" : example_username
   "Password" : example_password
 }
-
+```
 However, **the returned hash will be wrapped by Puppet's 'Sensitive' type** which is intended to prevent it showing up in logs. To use the values, you must unwrap the hash first. 
 
 ``` Puppet

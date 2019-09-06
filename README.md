@@ -78,6 +78,7 @@ For best results, use a yaml file or similar to store more meaningful key names,
 ```mydata.yaml
 server_root_account:     "%{alias('secret_server::32')}"
 ```
+This allows you to do easier Hiera autobinding with results from Secret Server. 
 
 If you're using your values in a file resource, it's a good idea to suppress the diff by setting `show_diff => false`, this will prevent the password from showing up in reports. 
 

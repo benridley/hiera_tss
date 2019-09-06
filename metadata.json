@@ -1,0 +1,37 @@
+{
+  "name": "dept-hiera_tss",
+  "version": "1.0.0",
+  "author": "Ben Ridley",
+  "summary": "Hiera 5 backend to query Thycotic Secret Server",
+  "license": "MIT",
+  "source": "https://github.com/benridley/hiera_tss",
+  "project_page": "https://github.com/benridley/hiera_tss",
+  "issues_url": "https://github.com/benridley/hiera_tss/issues",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "12.04",
+        "14.04"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    }
+  ],
+  "dependencies": [
+  ]
+}
+

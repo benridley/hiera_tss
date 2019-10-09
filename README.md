@@ -12,7 +12,7 @@ This is a hiera backend that allows you to query Thycotic Secret Server over its
 
 ### Requirements
 
-Only dependencies are the net/http and json gems for Ruby which ship with Puppet.
+Only dependencies are the net/http and json gems for Ruby which you should already have if you're running Puppet.
 
 ### Configuration
 
@@ -41,7 +41,7 @@ The following mandatory Hiera 5 options must be set for each level of the hierar
 
 #### SSL options
 
-`use_ssl:`: When set to true, enable SSL (default: false)
+`use_ssl:`: When set to true, enable SSL (default: true)
 
 `ca_file`: Specify a CA cert for use with SSL
 

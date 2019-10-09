@@ -66,7 +66,7 @@ Lookup a key using secret_server::#{secret_id}. If found, the returned value wil
   "Password" : example_password
 }
 ```
-However, **the returned hash will be wrapped by Puppet's 'Sensitive' type** which is intended to prevent it showing up in logs. To use the values, you must unwrap the hash first. 
+However, **the returned hash will be wrapped by Puppet's 'Sensitive' type** which is intended to prevent it showing up in logs or Puppet lookup commands. To use the values, you must unwrap the hash first. 
 
 ``` Puppet
   $my_username = $hiera_value.unwrap['Username']

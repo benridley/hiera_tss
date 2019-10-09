@@ -66,7 +66,7 @@ Lookup a key using secret_server::#{secret_id}. If found, the returned value wil
   "Password" : example_password
 }
 ```
-This works by looking for fields named 'Username' and 'Password' in the Secret Server API response. By default, normal secret templates should work fine. If you're using unusual secret types like SSH Keys or X.509 certificates, this lookup won't return anything useful because those field names won't exist. I'll consider adding support for arbitrary secret fields if the interest is there.
+This works by looking for fields named 'Username' and 'Password' in the Secret Server API response. By default, normal secret templates should work fine. If you're using other secret types like SSH Keys or X.509 certificates, this lookup won't return anything useful because those field names won't exist. I'll consider adding support for arbitrary secret fields if the interest is there.
 
 Also please know that **the returned hash will be wrapped by Puppet's 'Sensitive' type** which is intended to prevent it showing up in logs or Puppet lookup commands. To use the values, you must unwrap the hash first. 
 
